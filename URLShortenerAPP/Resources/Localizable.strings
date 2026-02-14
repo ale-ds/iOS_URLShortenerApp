@@ -1,0 +1,31 @@
+
+/* Network Errors */
+"networkErrorInvalidURL" = "A URL solicitada é inválida.";
+"networkErrorNoConnectivity" = "Parece que você está sem internet. Verifique sua conexão.";
+"networkErrorTimeout" = "A requisição demorou muito para responder. Tente novamente.";
+"networkErrorClient" = "Não foi possível encontrar o conteúdo (Erro %d).";
+"networkErrorServer" = "Nossos servidores estão instáveis no momento (Erro %d).";
+"networkErrorDecode" = "Erro ao processar os dados recebidos.";
+"networkErrorUnknown" = "Ocorreu um erro desconhecido.";
+
+/* Domain Errors */
+"domainErrorInvalidURL" = "A URL informada é inválida ou está vazia.";
+
+/* UI */
+"uiURLShortenerTitle" = "URL Shortener";
+"uiInputPlaceholder" = "Cole sua URL aqui...";
+"uiButtonShorten" = "Encurtar";
+"uiHeaderRecentHistory" = "URLs encurtadas recentemente";
+"uiEmptyStateTitle" = "Nenhum link ainda";
+"uiEmptyStateMessage" = "Cole uma URL acima para começar.";
+"uiActionCopy" = "Copiar";
+"uiFeedbackCopied" = "Copiado!";
+"uiButtonRetry" = "Tentar novamente";
+"uiButtonClose" = "OK";
+
+/* Assets Mapping */
+"iconCopy" = "doc.on.doc";
+"iconCheckmark" = "checkmark.circle.fill";
+"iconArrowRight" = "arrow.right";
+"iconRetry" = "arrow.clockwise";
+"illustrationEmpty" = "EmptyIllustration";

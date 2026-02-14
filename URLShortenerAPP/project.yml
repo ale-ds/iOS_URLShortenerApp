@@ -1,0 +1,66 @@
+name: URLShortener
+options:
+  bundleIdPrefix: com.candidato
+  deploymentTarget:
+    iOS: 15.0
+  xcodeVersion: 15.0
+  groupSortPosition: top
+  generateEmptyDirectories: true
+
+packages:
+  SkeletonView:
+    url: https://github.com/Juanpe/SkeletonView
+    from: 1.30.0
+  SnapshotTesting:
+    url: https://github.com/pointfreeco/swift-snapshot-testing
+    from: 1.12.0
+
+targets:
+  URLShortener:
+    type: application
+    platform: iOS
+    sources:
+      # 1. Configuração da pasta App e Info.plist
+      - path: App
+        excludes: ["Info.plist"]
+      - path: App/Info.plist
+        type: file
+      
+      # 2. Demais camadas
+      - path: Core
+      - path: Domain
+      - path: Networking
+      - path: Resources
+      - path: Scenes
+      
+    dependencies:
+      - package: SkeletonView
+      
+    settings:
+      base:
+        INFOPLIST_FILE: App/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        PRODUCT_BUNDLE_IDENTIFIER: com.candidato.URLShortener
+        MARKETING_VERSION: 1.0
+        CURRENT_PROJECT_VERSION: 1
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_USER_SCRIPT_SANDBOXING: YES
+        ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: YES
+        SWIFT_EMIT_LOC_STRINGS: YES
+
+  URLShortenerTests:
+    type: com.apple.product-type.bundle.unit-test
+    platform: iOS
+    sources:
+      - path: URLShortenerTests
+    dependencies:
+      - target: URLShortener
+      - package: SnapshotTesting
+    settings:
+      GENERATE_INFOPLIST_FILE: YES
+      PRODUCT_BUNDLE_IDENTIFIER: com.candidato.URLShortenerTests
+
+workspace:
+  name: URLShortener
+  projects:
+    - URLShortener.xcodeproj
